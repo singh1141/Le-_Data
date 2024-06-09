@@ -1,0 +1,28 @@
+<?php
+session_start();
+include "connection.php";
+
+if (isset($_POST['submit'])) {
+  $email = $_POST['email'];
+  $password = $_POST['pass'];
+
+  if ($email != "" && $password != "") {
+    $admin_query = "SELECT * FROM details WHERE email = '$email' AND password = '$password'";
+    $admin_result = mysqli_query($con, $admin_query);
+    $admin_num = mysqli_num_rows($admin_result);
+
+
+    if ($admin_num == 1) {
+      $_SESSION['s_uname'] = $email;
+      header('Location: lead.html'); 
+      
+    } else {
+      ?>
+      <script>
+        alert("Invalid email or password!");
+      </script>
+      <?php
+    }
+  }
+}
+?>
