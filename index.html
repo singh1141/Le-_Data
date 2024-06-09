@@ -7,27 +7,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <script>
-  function validate(){
+  function validate() {
     let emailId = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     console.log(emailId, password);
-    if(emailId === 'ankit@gg.cc' && password === 'Ankit@123'){
-      console.alert("LOGIN SUCCESS");
+    if (emailId === 'ankit@gg.cc' && password === 'Ankit@123') {
+      alert("LOGIN SUCCESS");
       window.open('lead.html');
     }
     else {
-      console.alert("LOGIN FAILED");
+      alert("LOGIN FAILED");
     }
   }
 </script>
+
 <body>
   <!-- partial:index.partial.html -->
   <div class="wrapper">
 
     <div class="login-box">
-      <!-- <form action="" method="post"> -->
+      <div>
         <h2>Login
-          
+
         </h2>
 
         <div class="input-box">
@@ -56,7 +57,7 @@
         <!-- <div class="register-link">
         <p>Don't have an account? <a href="#">Register</a></p>
       </div> -->
-      <!-- </form> -->
+      </div>
     </div>
 
   </div>
